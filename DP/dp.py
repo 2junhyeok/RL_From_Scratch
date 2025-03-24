@@ -9,9 +9,6 @@ new_V = V.copy()
 p = 0.5
 gamma = 0.9
 
-v_L1 = 0.0
-v_L2 = 0.0
-
 cnt = 0
 while True:
     new_V["L1"] = p*(-1 + gamma * V["L1"]) + p*(1 + gamma * V["L2"])
