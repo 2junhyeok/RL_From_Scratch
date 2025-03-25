@@ -8,6 +8,17 @@ sys.path.append(os.path.abspath(os.path.join(current_dir, "..")))
 from common.gridworld import GridWorld
 
 def eval_onestep(pi, V, env, gamma=0.9):
+    '''
+    1. 모든 state에 순차적으로 접근한다.
+    2. 해당 state에서 action distribution을 가져온다.
+    3. action transition function(env.state())으로 다음 state를 얻는다.
+    4. 다음 state 정보를 통해 new_V를 갱신한다.
+    Args:
+        pi (defaultdict): policy 
+        V (defaultdict): value function
+        env (GridWorld): environment
+        gamma (float): discount rate
+    '''
     for state in env.states():
         if state == env.goal_state:
             V[state]=0
@@ -26,6 +37,9 @@ def eval_onestep(pi, V, env, gamma=0.9):
     return V
 
 def policy_eval(pi, V, env, gamma, threshold=0.001):
+    '''
+    eval_onestep()을 반복 호출하여 갱신 변화량의 최댓값이 0.001보다 작아지면 중단한다.
+    '''
     while True:
         old_V = V.copy()
         V = eval_onestep(pi, V, env, gamma)
