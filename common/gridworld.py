@@ -44,6 +44,7 @@ class GridWorld:
         move = action_move_map[action]
         next_state = (state[0] + move[0], state[1] + move[1])
         move = action_move_map[action]
+        ny, nx = next_state
         
         if nx < 0 or nx >= self.width or ny < 0 or ny >= self.height:# out of grid world
             next_state = state
