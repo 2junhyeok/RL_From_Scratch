@@ -1,4 +1,13 @@
 from collections import defaultdict
+import numpy as np
+import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.abspath(os.path.join(current_dir, "..")))
+
+from common.gridworld import GridWorld
+from common.print_policy import print_policy
 
 class McAgent:
     def __init__(self):
@@ -15,7 +24,7 @@ class McAgent:
     
     def get_action(self, state):
         action_probs = self.pi[state]
-        actions = list(action_probs.ns())
+        actions = list(action_probs.keys())
         probs = list(action_probs.values())
         return np.random.choice(actions, p=probs)
     
@@ -35,7 +44,7 @@ class McAgent:
             #self.cnts[n] += 1# state, action 등장 횟수
             #self.Q[n] += (G - self.Q[n]) / self.cnts[n]# action value
             #self.pi[state] = greedy_probs(self.Q, state)
-            self.Q[n] += (G - self.Q[key]) / self.cnts[key]
+            self.Q[n] += (G - self.Q[n])*self.alpha
             self.pi[state] = greedy_probs(self.Q, state, self.epsilon)
             
     
@@ -47,3 +56,23 @@ def greedy_probs(Q, state, epsilon = 0, action_size=4):
     action_probs = {action: base_prob for action in range(action_size)}
     action_probs[max_action] += (1 -epsilon)
     return action_probs
+
+if __name__ == "__main__":
+    env = GridWorld()
+    agent = McAgent()
+    
+    episodes = 10000
+    for episode in range(episodes):
+        state = env.reset()
+        agent.reset()
+        
+        while True:
+            action = agent.get_action(state)
+            next_state, reward, done = env.step(action)
+            
+            agent.add(state, action, reward)
+            if done:
+                agent.update()
+                break
+            
+            state = next_state
