@@ -8,6 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(current_dir, "..")))
 
 from common.gridworld import GridWorld
 from common.print_policy import print_policy
+from common.print_policy import print_q_max
 
 class McAgent:
     def __init__(self):
@@ -76,3 +77,4 @@ if __name__ == "__main__":
                 break
             
             state = next_state
+    print_q_max(agent.Q, env)

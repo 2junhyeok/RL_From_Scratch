@@ -8,6 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(current_dir, "..")))
 
 from common.gridworld import GridWorld
 from common.utils import greedy_probs
+from common.print_policy import print_q_max
 
 class SarsaOffPolicyAgent:
     def __init__(self):
@@ -72,4 +73,4 @@ if __name__ == "__main__":
                 agent.update(next_state, None, None, None)
                 break
             state = next_state
-    print(agent.Q)
+    print_q_max(agent.Q, env)
