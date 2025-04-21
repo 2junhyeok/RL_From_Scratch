@@ -92,6 +92,9 @@ def run_experiment(args):
 
     return df, df_q, agent
 
+def moving_average(data, window_size=50):
+    return np.convolve(data, np.ones(window_size)/window_size, mode='valid')
+
 # 모든 state-action Q-값 히트맵 시각화 함수
 def visualize_q_heatmap(df_q, args, save_path=None):
     # 환경 크기 결정 (MiniGrid-Empty-6x6-v0 에서 숫자 추출)
@@ -156,10 +159,14 @@ def plot_training_results(df, save_path=None):
     axes[0].set_ylabel('Average Q-Value')
     axes[0].set_title('Q-Value Progression')
     axes[0].grid(True)
-    axes[1].plot(df['reward'], 'r-')
-    axes[1].set_ylabel('Episode Reward')
-    axes[1].set_title('Reward per Episode')
+
+
+    smoothed_rewards = moving_average(df['reward'], window_size=50)
+    axes[1].plot(smoothed_rewards, 'r-')
+    axes[1].set_ylabel('Smoothed Reward')
+    axes[1].set_title('Smoothed Reward per Episode')
     axes[1].grid(True)
+    
     axes[2].plot(df['success_rate'], 'g-')
     axes[2].set_ylabel('Success Rate')
     axes[2].set_xlabel('Episode')
