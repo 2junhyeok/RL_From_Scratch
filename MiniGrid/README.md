@@ -59,15 +59,16 @@ q_values.csv — raw Q-table in CSV format\
 <br>
 
 ## 📁 Project Structure
+
 ```bash
-├── experimentss/\
-│   ├── experiment.py  \            
-│   ├── results/\
+├── experimentss/
+│   ├── experiment.py  \           
+│   ├── results/
 │   └── ...       
 ├── models/
-│   ├── SARSA.py               # SARSA algorithm\
-│   └── Q_Learning.py          \
-├── logs/                      # Output folder\
-├── SarsaAndQLearning.ipynb\
+│   ├── SARSA.py               # SARSA algorithm
+│   └── Q_Learning.py          
+├── logs/                      # Output folder
+├── SarsaAndQLearning.ipynb
 └── README.md
 ```
