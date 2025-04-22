@@ -21,13 +21,13 @@ This project compares **SARSA** and **Q-Learning** algorithms in a minimal grid 
 - **Seaborn / Matplotlib / Pandas**
 
 ```bash
-pip install gym gym-minigrid matplotlib seaborn pandas
+pip install -r requirements.txt
 ```
 <br>
 
 ## 🏁 How to Run
 
-python experiment.py --model sarsa --episodes 1000 --env MiniGrid-Empty-6x6-v0\
+python experiment.py --model sarsa --episodes 100000 --env MiniGrid-Empty-6x6-v0\
 Arguments:\
 \
 Argument	Description	Default\
@@ -35,7 +35,7 @@ Argument	Description	Default\
 --alpha	Learning rate	0.01\
 --gamma	Discount factor	0.9\
 --epsilon	Epsilon-greedy value	0.2\
---episodes	Number of episodes	1000\
+--episodes	Number of episodes	100000\
 --log-interval	Logging frequency	100\
 --save-path	Directory to save results	results\
 <br>
