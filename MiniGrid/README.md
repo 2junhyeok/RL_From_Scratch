@@ -13,6 +13,24 @@ This project compares **SARSA** and **Q-Learning** algorithms in a minimal grid 
 
 <br>
 
+## 📁 Project Structure
+
+```bash
+SarsaAndQLearning/
+├── experimentss/
+│   ├── experiment.py     
+│   ├── results/
+│   └── ...       
+├── models/
+│   ├── SARSA.py               
+│   └── Q_Learning.py          
+├── logs/                      
+├── SarsaAndQLearning.ipynb
+└── README.md
+```
+
+<br>
+
 ## 🧱 Environment
 
 - **Python 3.8+**
@@ -56,20 +74,3 @@ q_values.csv — raw Q-table in CSV format\
 <img src="SarsaAndQLearning/experiments/results_09_S/q_heatmap_all_states_actions.png" width="450"/>\
 <img src="SarsaAndQLearning/experiments/results_09_S/training_results.png" width="450"/>
 
-<br>
-
-## 📁 Project Structure
-
-```bash
-SarsaAndQLearning/
-├── experimentss/
-│   ├── experiment.py     
-│   ├── results/
-│   └── ...       
-├── models/
-│   ├── SARSA.py               # SARSA algorithm
-│   └── Q_Learning.py          
-├── logs/                      # Output folder
-├── SarsaAndQLearning.ipynb
-└── README.md
-```
