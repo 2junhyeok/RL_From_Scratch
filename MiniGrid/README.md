@@ -22,6 +22,7 @@ This project compares **SARSA** and **Q-Learning** algorithms in a minimal grid 
 
 ```bash
 pip install gym gym-minigrid matplotlib seaborn pandas
+```
 <br>
 🏁 How to Run
 
