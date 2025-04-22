@@ -59,7 +59,7 @@ q_values.csv — raw Q-table in CSV format\
 <br>
 
 ## 📁 Project Structure
-
+```bash
 ├── experimentss/\
 │   ├── experiment.py  \            
 │   ├── results/\
@@ -70,3 +70,4 @@ q_values.csv — raw Q-table in CSV format\
 ├── logs/                      # Output folder\
 ├── SarsaAndQLearning.ipynb\
 └── README.md
+```
