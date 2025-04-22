@@ -24,7 +24,8 @@ This project compares **SARSA** and **Q-Learning** algorithms in a minimal grid 
 pip install gym gym-minigrid matplotlib seaborn pandas
 ```
 <br>
-🏁 How to Run
+
+## 🏁 How to Run
 
 python experiment.py --model sarsa --episodes 1000 --env MiniGrid-Empty-6x6-v0
 Arguments:
@@ -38,7 +39,9 @@ Argument	Description	Default
 --log-interval	Logging frequency	100
 --save-path	Directory to save results	results
 <br>
-📂 Output
+
+## 📂 Output
+
 results/
 
 training_results.png — training curves (Q-value mean, reward, success rate)
@@ -47,28 +50,23 @@ q_heatmap_all_states_actions.png — full Q-table heatmap
 
 q_values.csv — raw Q-table in CSV format
 
-<br>
-🗺️ Q-table Visualization from Saved CSV
-If you already have a saved q_values.csv, use the standalone script below to visualize the heatmap again:
-
-
-python visualize_q_from_csv.py --csv-path results/q_values.csv --env MiniGrid-Empty-6x6-v0
-This will generate a heatmap sorted by state and action in descending order.
 
 <br>
-📈 Example: Training Curve and Heatmap
-<img src="results/training_results.png" width="450"/> <img src="results/q_heatmap_all_states_actions.png" width="450"/>
+
+## 📈 Example: Training Curve and Heatmap
+<img src="MiniGrid/SarsaAndQLearning/experiments/results_09_S/q_heatmap_all_states_actions.png" width="450"/> <img src="MiniGrid/SarsaAndQLearning/experiments/results_09_S/training_results.png" width="450"/>
 
 <br>
-📁 Project Structure
+
+## 📁 Project Structure
 .
-├── experimentss/
-│   ├── experiment.py              
-│   ├── results/
+├── experimentss/\
+│   ├── experiment.py  \            
+│   ├── results/\
 │   └── ...       
 ├── models/
-│   ├── SARSA.py               # SARSA algorithm
-│   └── Q_Learning.py          
-├── logs/                      # Output folder
-├── SarsaAndQLearning.ipynb
+│   ├── SARSA.py               # SARSA algorithm\
+│   └── Q_Learning.py          \
+├── logs/                      # Output folder\
+├── SarsaAndQLearning.ipynb\
 └── README.md
