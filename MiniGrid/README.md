@@ -42,8 +42,7 @@ Argument	Description	Default\
 
 ## 📂 Output
 
-results/
-\
+
 training_results.png — training curves (Q-value mean, reward, success rate)\
 \
 q_heatmap_all_states_actions.png — full Q-table heatmap\
