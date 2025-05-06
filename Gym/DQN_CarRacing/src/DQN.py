@@ -39,7 +39,6 @@ class DQN:
         self.target_network.to(self.device)
 
         self.total_steps = 0
-        self.epsilon_decay = (epsilon - epsilon_min) / 1e6
 
     @torch.no_grad()
     def act(self, x, training=True):
