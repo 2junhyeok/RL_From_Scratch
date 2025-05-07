@@ -5,17 +5,17 @@
 
 ## 📁 폴더 구조
 
-├── checkpoints # 학습된 모델 가중치 (.pt)
-├── logs # 학습 그래프 이미지 (.png)
-├── DQN_CarRacing
-│ ├── DQN_CarRacing.py # 메인 학습 스크립트
-│ └── src
-│ ├── CNN.py # 이미지 feature extractor
-│ ├── DQN.py # DQN 클래스
-│ ├── Dueling_DQN.py# Dueling DQN 클래스
-│ ├── Preprocess.py # 이미지 전처리 및 상태 stack
-│ └── init.py
-├── README.md
+├── checkpoints # 학습된 모델 가중치 (.pt)\
+├── logs # 학습 그래프 이미지 (.png)\
+├── DQN_CarRacing\
+│ ├── DQN_CarRacing.py # 메인 학습 스크립트\
+│ └── src\
+│ ├── CNN.py # 이미지 feature extractor\
+│ ├── DQN.py # DQN 클래스\
+│ ├── Dueling_DQN.py# Dueling DQN 클래스\
+│ ├── Preprocess.py # 이미지 전처리 및 상태 stack\
+│ └── init.py\
+├── README.md\
 
 
 ---
@@ -26,19 +26,19 @@
 ```bash
 pip install -r requirements.txt
 pip install box2d-py
-
+```
 
 2. 학습 실행
 기본 DQN 모델 학습 실행:
-'''bash
+```bash
 python DQN_CarRacing/DQN_CarRacing.py
-'''
+```
 
 다양한 설정을 주고 실행할 수 있습니다:\
-'''bash
+```bash
 python DQN_CarRacing/DQN_CarRacing.py --gamma 0.9 --eps-decay 0.995 --model DQN
 python DQN_CarRacing/DQN_CarRacing.py --gamma 0.95 --eps-decay 0.99 --model DuelingDQN
-'''
+```
 실험 결과
 - 학습 도중 일정 스텝마다 에이전트를 평가하고 평균 리턴(AvgReturn)을 기록했습니다. 성능이 향상될 때마다 모델이 저장되며, 최종 그래프는 logs/에 저장됩니다.
 
