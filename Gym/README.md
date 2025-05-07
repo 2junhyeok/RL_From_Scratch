@@ -53,9 +53,9 @@ python DQN_CarRacing/DQN_CarRacing.py --gamma 0.95 --eps-decay 0.99 --model Duel
 
 TEST
 - 각 실험에서 최고 reward를 달성한 체크포인트의 infernece를 진행함.
-![plot_step_0.99_0.95.png](logs/car_racing_result_DQN.gif)
+![plot_step_0.99_0.95.png](logs/car_racing_result_DQN.gif)\
 - DQN
-![alt text](logs/car_racing_result_DuelingDQN.gif)
+![alt text](logs/car_racing_result_DuelingDQN.gif)\
 - DuelingDQN
 
 참고 사항
