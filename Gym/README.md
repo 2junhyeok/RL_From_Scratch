@@ -44,12 +44,12 @@ python DQN_CarRacing/DQN_CarRacing.py --gamma 0.95 --eps-decay 0.99 --model Duel
 
 성능이 향상될 때마다 모델은 checkpoints/에 저장되며, 학습 그래프는 logs/에 저장됩니다.
 
-감마    (γ)    Epsilon Decay	모델	결과 그래프
-0.9    0.995	DQN    <img src="logs/plot_step_0.995_0.9.png" width="450"/>
-0.95	0.99	DoubleDQN + DuelingDQN	<img src="logs/plot_step_0.99_0.95.png" width="450"/>
+<img src="logs/plot_step_0.995_0.9.png" width="450"/>\
+- γ=0.9, ε-decay=0.995 (DQN): 초기 학습 속도가 빠르나, 장기적으로 변동성이 큼.\
 
-- γ=0.9, ε-decay=0.995 (DQN): 초기 학습 속도가 빠르나, 장기적으로 변동성이 큼.
-- γ=0.95, ε-decay=0.99 (DoubleDQN + DuelingDQN): 안정적인 학습 곡선을 보이며, 최종 리턴이 더 높음.
+<img src="logs/plot_step_0.99_0.95.png" width="450"/>\
+- γ=0.95, ε-decay=0.99 (DoubleDQN + DuelingDQN): 안정적인 학습 곡선을 보이며, 최종 리턴이 더 높음.\
+
 
 참고 사항
 - 전처리: Preprocess.py는 입력 이미지를 회색조로 변환하고 84x84로 리사이징한 뒤, 4개의 연속 프레임을 쌓아 시간적 정보를 포함한 상태로 사용합니다.
