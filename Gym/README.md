@@ -51,6 +51,12 @@ python DQN_CarRacing/DQN_CarRacing.py --gamma 0.95 --eps-decay 0.99 --model Duel
 <img src="logs/plot_step_0.99_0.95.png" width="450"/>
 - γ=0.95, ε-decay=0.99 (DoubleDQN + DuelingDQN): 안정적인 학습 곡선을 보이며, 최종 리턴이 더 높음.
 
+TEST
+- 각 실험에서 최고 reward를 달성한 체크포인트의 infernece를 진행함.
+![plot_step_0.99_0.95.png](logs/car_racing_result_DQN.gif)
+- DQN
+![alt text](logs/car_racing_result_DuelingDQN.gif)
+- DuelingDQN
 
 참고 사항
 - 전처리: Preprocess.py는 입력 이미지를 회색조로 변환하고 84x84로 리사이징한 뒤, 4개의 연속 프레임을 쌓아 시간적 정보를 포함한 상태로 사용합니다.
