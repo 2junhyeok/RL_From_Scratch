@@ -16,7 +16,7 @@
 │   ├── Dueling_DQN.py# Dueling DQN 클래스
 │   ├── Preprocess.py # 이미지 전처리 및 상태 stack
 │   └── init.py
-├── README.md
+└── README.md
 ```
 
 ---
@@ -35,7 +35,7 @@ pip install box2d-py
 python DQN_CarRacing/DQN_CarRacing.py
 ```
 
-다양한 설정을 주고 실행할 수 있습니다:\
+다양한 설정을 주고 실행할 수 있습니다:
 ```bash
 python DQN_CarRacing/DQN_CarRacing.py --gamma 0.9 --eps-decay 0.995 --model DQN
 python DQN_CarRacing/DQN_CarRacing.py --gamma 0.95 --eps-decay 0.99 --model DuelingDQN
@@ -45,11 +45,11 @@ python DQN_CarRacing/DQN_CarRacing.py --gamma 0.95 --eps-decay 0.99 --model Duel
 
 성능이 향상될 때마다 모델은 checkpoints/에 저장되며, 학습 그래프는 logs/에 저장됩니다.
 
-<img src="logs/plot_step_0.995_0.9.png" width="450"/>\
-- γ=0.9, ε-decay=0.995 (DQN): 초기 학습 속도가 빠르나, 장기적으로 변동성이 큼.\
+<img src="logs/plot_step_0.995_0.9.png" width="450"/>
+- γ=0.9, ε-decay=0.995 (DQN): 초기 학습 속도가 빠르나, 장기적으로 변동성이 큼.
 
-<img src="logs/plot_step_0.99_0.95.png" width="450"/>\
-- γ=0.95, ε-decay=0.99 (DoubleDQN + DuelingDQN): 안정적인 학습 곡선을 보이며, 최종 리턴이 더 높음.\
+<img src="logs/plot_step_0.99_0.95.png" width="450"/>
+- γ=0.95, ε-decay=0.99 (DoubleDQN + DuelingDQN): 안정적인 학습 곡선을 보이며, 최종 리턴이 더 높음.
 
 
 참고 사항
