@@ -4,19 +4,20 @@
 이미지 기반 관측(observation)을 처리하기 위해 CNN 기반의 모델을 사용하였으며, 주요 하이퍼파라미터 변화에 따른 성능 비교 실험을 수행했습니다.
 
 ## 📁 폴더 구조
-
-├── checkpoints # 학습된 모델 가중치 (.pt)\
-├── logs # 학습 그래프 이미지 (.png)\
-├── DQN_CarRacing\
-│ ├── DQN_CarRacing.py # 메인 학습 스크립트\
-│ └── src\
-│ ├── CNN.py # 이미지 feature extractor\
-│ ├── DQN.py # DQN 클래스\
-│ ├── Dueling_DQN.py# Dueling DQN 클래스\
-│ ├── Preprocess.py # 이미지 전처리 및 상태 stack\
-│ └── init.py\
-├── README.md\
-
+```bash
+├── checkpoints # 학습된 모델 가중치 (.pt)
+├── logs # 학습 그래프 이미지 (.png)
+├── DQN_CarRacing
+│ ├── DQN_CarRacing.py # 메인 학습 스크립트
+│ ├── requirements.txt
+│ └── src
+│   ├── CNN.py # 이미지 feature extractor
+│   ├── DQN.py # DQN 클래스
+│   ├── Dueling_DQN.py# Dueling DQN 클래스
+│   ├── Preprocess.py # 이미지 전처리 및 상태 stack
+│   └── init.py
+├── README.md
+```
 
 ---
 
