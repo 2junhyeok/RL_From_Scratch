@@ -57,22 +57,24 @@ def main():
     env = gym.make("CartPole-v0")
     agent = Agent()
     reward_history = []
-    
-    for episode in range(episodes):
-        state = env.reset()[0]
+
+    for episode in range(3000):
+        state = env.reset()
         done = False
         total_reward = 0
-        
+
         while not done:
             action, prob = agent.get_action(state)# pi(A_0|S_0)
-            next_state, reward, terminated, truncated, info = env.step(action)
-            done = terminated | truncated
-            
+            next_state, reward, done, info = env.step(action)
+
             agent.add(reward, prob)
             state = next_state
             total_reward += reward
-        agent.update()
-        reward_history.append(total_reward)
 
+        agent.update()
+
+        reward_history.append(total_reward)
+        if episode % 100 == 0:
+            print("episode :{}, total reward : {:.4f}".format(episode, total_reward))
 if __name__ == "__main__":
     main()
