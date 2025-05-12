@@ -34,17 +34,45 @@ class Agent:
         action = np.random.choice(len(probs), p=probs.data)
         return action, probs[action]
 
-if __name__ == "__main__":
+    def add(self, reward, prob):
+        data = (reward, prob)
+        self.memory.append(data)
+        
+    def update(self):
+        self.pi.cleargrads()
+        
+        G, loss = 0, 0
+        for reward, prob in reversed(self.memory):
+            G = reward + self.gamma*G
+        
+        for reward, prob in self.memory:
+            loss += -F.log(prob)*G# gradient
+        
+        loss.backward()
+        self.optimizer.update()
+        self.memory = []
+
+def main():
+    episodes = 3000
     env = gym.make("CartPole-v0")
-    state = env.reset()
     agent = Agent()
+    reward_history = []
     
-    action, prob = agent.get_action(state)
-    print("action: ", action)
-    print("prob: ", prob)# pi(A_0|S_0)
-    
-    G = 100.0# Return
-    J = G * F.log(prob)# gradient
-    print("J: ", J)
-    
-    J.backward()
+    for episode in range(episodes):
+        state = env.reset()[0]
+        done = False
+        total_reward = 0
+        
+        while not done:
+            action, prob = agent.get_action(state)# pi(A_0|S_0)
+            next_state, reward, terminated, truncated, info = env.step(action)
+            done = terminated | truncated
+            
+            agent.add(reward, prob)
+            state = next_state
+            total_reward += reward
+        agent.update()
+        reward_history.append(total_reward)
+
+if __name__ == "__main__":
+    main()
