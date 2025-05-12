@@ -58,7 +58,7 @@ def main():
     agent = Agent()
     reward_history = []
 
-    for episode in range(3000):
+    for episode in range(episodes):
         state = env.reset()
         done = False
         total_reward = 0
